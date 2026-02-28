@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Princy ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+margin:0;
+overflow:hidden;
+font-family: Arial, sans-serif;
+text-align:center;
+background: linear-gradient(270deg,#ff4b6e,#ff758c,#ff9a9e);
+background-size:600% 600%;
+animation:bgMove 12s infinite;
+color:white;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.container{
+margin-top:120px;
+z-index:2;
+position:relative;
+}
+
+h1{
+font-size:28px;
+}
+
+h2{
+margin-bottom:30px;
+}
+
+button{
+padding:15px 30px;
+font-size:18px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+box-shadow:0 0 15px rgba(0,0,0,0.3);
+}
+
+#yes{
+background:#00c853;
+color:white;
+}
+
+#no{
+background:#d50000;
+color:white;
+position:absolute;
+}
+
+#result{
+margin-top:30px;
+font-size:24px;
+}
+
+.heart{
+position:absolute;
+color:white;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+100%{
+transform:translateY(-10vh);
+opacity:0;
+}
+}
+
+.fullscreen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:5;
+}
+
+</style>
+</head>
+
+<body>
+
+<audio id="music" autoplay loop>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+</audio>
+
+<div class="container">
+
+<h1>
+Princy (Chota Don 🔫🔫) ❤️
+</h1>
+
+<h2>
+Will you be my Valentine?
+</h2>
+
+<button id="yes" onclick="yesClick()">YES 💖</button>
+
+<button id="no" onmouseover="moveNo()">NO 😜</button>
+
+<div id="result"></div>
+
+</div>
+
+
+<div class="fullscreen" id="loveScreen">
+
+<h1 style="font-size:35px">
+Yayyy Princy ❤️
+</h1>
+
+<h2>
+I love you sooo much 🥰
+</h2>
+
+<h3>
+You are my forever Valentine 💍
+</h3>
+
+</div>
+
+
+<script>
+
+function yesClick(){
+
+document.getElementById("loveScreen").style.display="flex";
+
+createHearts(50);
+
+}
+
+
+function moveNo(){
+
+var btn=document.getElementById("no");
+
+btn.style.top=Math.random()*80+"%";
+btn.style.left=Math.random()*80+"%";
+
+}
+
+
+function createHearts(count){
+
+for(let i=0;i<count;i++){
+
+let heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.className="heart";
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.fontSize=(20+Math.random()*30)+"px";
+
+heart.style.animationDuration=(3+Math.random()*5)+"s";
+
+document.body.appendChild(heart);
+
+}
+
+}
+
+
+createHearts(20);
+
+
+</script>
+
+</body>
+</html>
